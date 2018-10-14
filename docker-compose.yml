@@ -1,0 +1,6 @@
+version: '2'
+services:
+  registry:
+    image: microservice-registry:1.0.0
+    ports: 
+      - "4000:3000"

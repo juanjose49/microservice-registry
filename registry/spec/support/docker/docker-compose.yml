@@ -1,0 +1,5 @@
+version: '2'
+services:
+  registry:
+    image: microservice-registry:1.0.0
+    entrypoint: node node_modules/jasmine/bin/jasmine
