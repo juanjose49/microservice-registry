@@ -2,4 +2,4 @@ version: '2'
 services:
   registry:
     image: microservice-registry:1.0.0
-    entrypoint: node node_modules/jasmine/bin/jasmine
+    entrypoint: node node_modules/jasmine/bin/jasmine JASMINE_CONFIG_PATH="src/spec/support/jasmine.json"
