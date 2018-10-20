@@ -4,7 +4,7 @@
   "description": "A backend service that hosts meta information about existing microservices.",
   "main": "app.js",
   "scripts": {
-    "docker-build": "docker build -t microservice-registry:1.0.0 . && docker rmi -f $(docker images --filter 'dangling=true' -q) 2>/dev/null || true",
+    "build": "docker build -t microservice-registry:1.0.0 . && docker rmi -f $(docker images --filter 'dangling=true' -q) 2>/dev/null || true",
     "test": "npm run build && docker-compose -f spec/support/docker/docker-compose.yml up && docker-compose -f spec/support/docker/docker-compose.yml down"
   },
   "author": "Juan J. San Emeterio",
