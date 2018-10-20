@@ -10,4 +10,4 @@ services:
     ports: 
       - "5000:4200"
     volumes:
-      - ./registry-ui/src:/src
+      - ./registry-ui/src:/app/src
