@@ -6,4 +6,5 @@ services:
 
 script:
   - cd registry && npm run test
-  - cd registry-ui && npm run test
+  - cd ../registry-ui && npm run test
+  - npm run e2e
