@@ -1,0 +1,9 @@
+sudo: required
+language: node
+
+services:
+  - docker
+
+script:
+  - cd registry && npm run test
+  - cd registry-ui && npm run test
