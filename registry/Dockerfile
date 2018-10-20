@@ -5,5 +5,4 @@ ADD package.json package.json
 ADD package-lock.json package-lock.json
 RUN npm install
 ENTRYPOINT nodemon src/app.js
-VOLUME /app
 ADD . .

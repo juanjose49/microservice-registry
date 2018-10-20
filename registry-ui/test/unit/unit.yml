@@ -1,0 +1,5 @@
+version: '3'
+services:
+  registry-ui:
+    image: microservice-registry-ui:1.0.0
+    entrypoint: ng test --watch=false

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  registry:
+    image: microservice-registry:1.0.0
+  registry-ui:
+    image: microservice-registry-ui:1.0.0
+    entrypoint: ng e2e

@@ -2,7 +2,10 @@
   "name": "registry-ui",
   "version": "0.0.0",
   "scripts": {
-    "build": "docker build -t microservice-registry-ui:1.0.0 . && docker rmi -f $(docker images --filter 'dangling=true' -q) 2>/dev/null || true"
+    "build": "docker build -t microservice-registry-ui:1.0.0 . && docker rmi -f $(docker images --filter 'dangling=true' -q) 2>/dev/null || true",
+    "test": "npm run build && docker-compose -f test/unit/unit.yml up -d && docker-compose -f test/unit/unit.yml logs -f registry-ui ",
+    "e2e": "npm run build && docker-compose -f test/e2e/e2e.yml up -d && docker-compose -f test/e2e/e2e.yml logs -f registry-ui"
+  
   },
   "private": true,
   "dependencies": {
