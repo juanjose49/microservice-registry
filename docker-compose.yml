@@ -4,6 +4,8 @@ services:
     image: microservice-registry:1.0.0
     ports: 
       - "4000:3000"
+    volumes:
+      - ./registry/src:/app/src
 
   registry-ui:
     image: microservice-registry-ui:1.0.0
