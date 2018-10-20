@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   registry:
     image: microservice-registry:1.0.0
