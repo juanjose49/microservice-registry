@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'registry-ui'`, () => {
+  it(`should have as title 'Microservice Registry'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('registry-ui');
+    expect(app.title).toEqual('Microservice Registry');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to registry-ui!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Microservice Registry!');
   });
 });
