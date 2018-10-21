@@ -22,9 +22,7 @@ jobs:
         # - cd registry && npm run test
         # - cd ../registry-ui && npm run test
         # - npm run e2e
-        - eval "$(ssh-agent -s)"
-        - sshpass -p$SSH_PASS ssh-add <(echo "$SSH_KEY")
-        - ssh $MICROSERVICE_REGISTRY_USER@microserviceregistry.com
+        - sshpass -p$SSH_PASSssh $MICROSERVICE_REGISTRY_USER@microserviceregistry.com
         - echo "hello world"
 
 
