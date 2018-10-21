@@ -26,7 +26,7 @@ jobs:
         # - cd ../registry-ui && npm run test
         # - npm run e2e
         - echo $SSH_KEY > ssh_key
-        - ssh -i ssh_key $MICROSERVICE_REGISTRY_USER@microserviceregistry.com 'echo "hello world"'
+        - sshpass -p$SSH_PASS ssh -i ssh_key $MICROSERVICE_REGISTRY_USER@microserviceregistry.com 'echo "hello world"'
         - 
 
 
