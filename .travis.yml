@@ -1,6 +1,10 @@
 sudo: required
 services:
   - docker
+addons:
+  apt:
+    packages:
+    - sshpass
 jobs:
   include:
     - if: branch = master
@@ -18,7 +22,9 @@ jobs:
         # - cd registry && npm run test
         # - cd ../registry-ui && npm run test
         # - npm run e2e
-        - ssh $MICROSERVICE_REGISTRY_USER@microserviceregistry.com $SSH_KEY
+        - eval "$(ssh-agent -s)"
+        - sshpass ssh-add <(echo "$SSH_KEY")
+        - ssh $MICROSERVICE_REGISTRY_USER@microserviceregistry.com
         - echo "hello world"
 
 
