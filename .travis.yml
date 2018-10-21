@@ -15,6 +15,12 @@ jobs:
         - docker push microserviceregistry/registry-ui:latest
     - if: branch != master
       script:
-        - cd registry && npm run test
-        - cd ../registry-ui && npm run test
-        - npm run e2e
+        # - cd registry && npm run test
+        # - cd ../registry-ui && npm run test
+        # - npm run e2e
+        - ssh-add $SSH_KEY
+        - ssh $MICROSERVICE_REGISTRY_USER@microserviceregistry.com
+        - echo "hello world"
+
+
+        
