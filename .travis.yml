@@ -7,3 +7,7 @@ script:
   # - cd ../registry-ui && npm run test
   # - npm run e2e
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+  - docker tag microservice-registry:1.0.0 microserviceregistry/registry:latest
+  # - docker tag microservice-registry-ui:1.0.0 microserviceregistry/registry-ui:latest
+  - docker push microserviceregistry/registry:latest
+  # - docker push microserviceregistry/registry-ui:latest
