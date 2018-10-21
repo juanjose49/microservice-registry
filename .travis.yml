@@ -2,11 +2,12 @@ sudo: required
 services:
   - docker
 addons:
+  ssh_known_hosts:
+    - microserviceregistry.com
   apt:
     packages:
     - sshpass
-    ssh_known_hosts:
-    - microserviceregistry.com
+    
 jobs:
   include:
     - if: branch = master
