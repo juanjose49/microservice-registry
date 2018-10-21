@@ -4,5 +4,6 @@ services:
 
 script:
   - cd registry && npm run test
-  - cd ../registry-ui && npm run test
-  - npm run e2e
+  # - cd ../registry-ui && npm run test
+  # - npm run e2e
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
