@@ -7,6 +7,7 @@ addons:
   apt:
     packages:
     - sshpass
+    - expect
     
 jobs:
   include:
@@ -27,7 +28,9 @@ jobs:
         # - npm run e2e
         - echo $SSH_KEY > ssh_key
         - chmod 600 ssh_key
-        - ssh -i ssh_key $MICROSERVICE_REGISTRY_USER@microserviceregistry.com 'echo "hello world"' 
+        - spawn ssh -i ssh_key $MICROSERVICE_REGISTRY_USER@microserviceregistry.com 'echo "hello world"' 
+        - expect "*?assword:*"
+        - send -- "\r"
 
 
         
